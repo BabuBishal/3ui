@@ -1,0 +1,70 @@
+{
+  "name": "3ui",
+  "version": "0.1.0",
+  "description": "A modern, accessible React component library with TypeScript support",
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles": "./dist/theme.css",
+    "./theme.css": "./dist/theme.css"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "build": "pnpm run clean && tsc -p tsconfig.build.json && vite build && cp ./theme.css ./dist/theme.css",
+    "clean": "rm -rf dist",
+    "dev": "vite",
+    "prepare": "pnpm run build",
+    "prepublishOnly": "pnpm run build"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "typescript",
+    "component-library",
+    "design-system",
+    "accessible",
+    "react-components",
+    "ui-library",
+    "hooks",
+    "3ui"
+  ],
+  "author": "Bishal Babu Bohara <boharabishalbabu@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BabuBishal/3ui.git",
+    "directory": "ComponentLibrary/packages/ui"
+  },
+  "bugs": {
+    "url": "https://github.com/BabuBishal/3ui/issues"
+  },
+  "homepage": "https://github.com/BabuBishal/3ui#readme",
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^5.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.3.2",
+    "vite": "^5.0.0"
+  }
+}
