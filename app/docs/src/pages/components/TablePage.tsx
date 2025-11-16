@@ -1,4 +1,4 @@
-import Table from "../../../../../packages/ui/src/components/table/Table";
+import {Table} from "3ui";
 import CodeBlock from "../../shared/templates/codeBlock/CodeBlock";
 import Container from "../../shared/templates/container/Container";
 

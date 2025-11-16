@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Container from "../../shared/templates/container/Container";
 import CodeBlock from "../../shared/templates/codeBlock/CodeBlock";
-import Modal from "../../../../../packages/ui/src/components/modal/Modal";
-import { Button } from "../../../../../packages/ui/src/components/button/Button";
+import {Modal} from "3ui";
+import { Button } from "3ui";
+
 const ModalCode = `  
 const [isModalOpen, setIsModalOpen] = useState(false);
 

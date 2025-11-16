@@ -1,4 +1,4 @@
-import Card from "../../../../../packages/ui/src/components/card/Card";
+import {Card} from "3ui";
 import CodeBlock from "../../shared/templates/codeBlock/CodeBlock";
 import Container from "../../shared/templates/container/Container";
 

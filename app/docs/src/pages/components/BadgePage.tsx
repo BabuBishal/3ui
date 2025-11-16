@@ -1,5 +1,5 @@
 import Container from "../../shared/templates/container/Container";
-import Badge from "../../../../../packages/ui/src/components/badges/Badges";
+import {Badge} from "3ui";
 import CodeBlock from "../../shared/templates/codeBlock/CodeBlock";
 
 const BadgeVariantCode = `<Badge text="Success" variant="success" />

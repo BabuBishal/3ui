@@ -1,5 +1,5 @@
-import LoadingDots from "../../../../../packages/ui/src/components/loading/LoadingDots/LoadingDots";
-import Spinner from "../../../../../packages/ui/src/components/loading/Spinner/Spinner";
+import {LoadingDots} from "3ui";
+import {Spinner} from "3ui"
 import CodeBlock from "../../shared/templates/codeBlock/CodeBlock";
 import Container from "../../shared/templates/container/Container";
 const SpinnerCode = `<Spinner />`;

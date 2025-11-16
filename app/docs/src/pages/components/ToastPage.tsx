@@ -1,7 +1,7 @@
 import CodeBlock from "../../shared/templates/codeBlock/CodeBlock";
 import Container from "../../shared/templates/container/Container";
-import { useToast } from "../../../../../packages/ui/src/components/toast";
-import { Button } from "../../../../../packages/ui/src/components/button/Button";
+import { useToast } from "3ui";
+import { Button } from "3ui";
 
 const ToastPage = () => {
   const { notify, dismiss } = useToast();

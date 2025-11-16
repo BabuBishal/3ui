@@ -10,7 +10,7 @@ const LoadingDotsContext = createContext<LoadingDotsContextType | undefined>(
 export const LoadingDots = ({
   size = "md",
   color,
-  speed = 0.6,
+  speed = 1,
   unstyled = false,
   children,
   className,

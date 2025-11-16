@@ -1,4 +1,4 @@
-import Accordion from "../../../../../packages/ui/src/components/accordion/Accordion";
+import { Accordion} from "3ui";
 import CodeBlock from "../../shared/templates/codeBlock/CodeBlock";
 import Container from "../../shared/templates/container/Container";
 

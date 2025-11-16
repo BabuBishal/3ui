@@ -1,4 +1,4 @@
-import Tabs from "../../../../../packages/ui/src/components/tabs/Tabs";
+import {Tabs} from "3ui";
 import CodeBlock from "../../shared/templates/codeBlock/CodeBlock";
 
 import Container from "../../shared/templates/container/Container";

@@ -1,68 +1,46 @@
-/* ────────────────────────────────
-   Base card styles
-────────────────────────────────── */
 .ui-card {
   display: flex;
   flex-direction: column;
   background-color: var(--ui-surface, #ffffff);
   color: var(--ui-text-primary, #0f172a);
   border: 1px solid var(--ui-border, #e6e6e6);
-  border-radius: 0.5rem;
+  border-radius: 0.75rem; 
   box-shadow: var(--ui-shadow, 0 1px 3px rgba(0,0,0,0.1));
-  padding: 1rem;
+  padding: 0; 
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
   transition: box-shadow 0.2s ease, transform 0.1s ease;
+  overflow: hidden; 
 }
 
-/* ────────────────────────────────
-   Hover effect
-────────────────────────────────── */
-.ui-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--ui-shadow-md, 0 4px 6px rgba(0,0,0,0.1));
+/* Add Card sub-components */
+.ui-card-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--ui-border);
+  background: var(--ui-surface);
 }
 
-/* ────────────────────────────────
-   Variants
-────────────────────────────────── */
-
-/* Elevated card */
-.ui-card--elevated {
-  box-shadow: var(--ui-shadow-lg, 0 10px 15px rgba(0,0,0,0.1));
-}
-
-/* Bordered card */
-.ui-card--bordered {
-  border: 1px solid var(--ui-border, #e6e6e6);
-}
-
-/* Rounded corners */
-.ui-card--rounded {
-  border-radius: 1rem;
-}
-
-/* Padding sizes */
-.ui-card--sm {
-  padding: 0.5rem;
-}
-
-.ui-card--md {
-  padding: 1rem;
-}
-
-.ui-card--lg {
+.ui-card-body {
   padding: 1.5rem;
+  flex: 1;
 }
 
-/* Background variants */
-.ui-card--primary {
-  background-color: var(--ui-primary, #1f6feb);
-  color: var(--ui-primary-contrast, #ffffff);
+.ui-card-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--ui-border);
+  background: var(--ui-surface);
 }
 
-.ui-card--secondary {
-  background-color: var(--ui-secondary, #f3f4f6);
-  color: var(--ui-secondary-contrast, #0f172a);
+.ui-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ui-text-primary);
+  margin: 0;
+}
+
+.ui-card-description {
+  font-size: 0.875rem;
+  color: var(--ui-text-secondary);
+  margin-top: 0.25rem;
 }

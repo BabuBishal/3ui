@@ -18,28 +18,30 @@
   position: relative;
   width: var(--toggle-width, 44px);
   height: var(--toggle-height, 24px);
-background-color: var(--ui-toggle-bg, #e6e9eb);
+  background-color: var(--toggle-bg-off, #cbd5e1); /* Better default */
   border-radius: 999px;
-  transition: background-color 0.25s ease, opacity 0.25s ease;
+  transition: background-color 0.25s ease;
+  cursor: pointer;
 }
 
-/* Switch Track (ON) */
 .toggle-on {
-  background-color: var(--toggle-bg-on, #4caf50);
+  background-color: var(--toggle-bg-on, var(--ui-accent, #3b82f6));
 }
 
-/* Thumb */
 .toggle-thumb {
   position: absolute;
-  top: 3px;
-  left: 3px;
-  width: var(--toggle-thumb-size, 18px);
-  height: var(--toggle-thumb-size, 18px);
-background-color: var(--ui-toggle-checked-bg, #2563eb);  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  width: calc(var(--toggle-thumb-size, 20px));
+  height: calc(var(--toggle-thumb-size, 20px));
+  background-color: var(--toggle-thumb-bg, #ffffff);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: transform 0.25s ease;
 }
 
-/* Thumb moved when ON */
 .toggle-on .toggle-thumb {
-  transform: translateX(calc(var(--toggle-width, 44px) - var(--toggle-thumb-size, 18px) - 6px));
+  transform: translateX(
+    calc(var(--toggle-width, 44px) - var(--toggle-thumb-size, 20px) - 4px)
+  );
 }

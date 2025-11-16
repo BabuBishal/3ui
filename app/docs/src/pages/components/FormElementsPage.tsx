@@ -1,11 +1,12 @@
-import Checkbox from "../../../../../packages/ui/src/components/form/Checkbox/Checkbox";
-import Select from "../../../../../packages/ui/src/components/form/Select/Select";
-import Textarea from "../../../../../packages/ui/src/components/form/Textarea/Textarea";
-import Input from "../../../../../packages/ui/src/components/form/TextInput/Input";
-import Toggle from "../../../../../packages/ui/src/components/toggle/Toggle";
-import CodeBlock from "../../shared/templates/codeBlock/CodeBlock";
-import Container from "../../shared/templates/container/Container";
-import Slider from "../../../../../packages/ui/src/components/slider/Slider";
+import {Checkbox} from "3ui"
+import {Select} from "3ui"
+import {Textarea} from "3ui"
+import {Input} from "3ui"
+import {Toggle} from "3ui"
+import {Slider} from "3ui"
+import CodeBlock from "../../shared/templates/codeBlock/CodeBlock"
+import Container from "../../shared/templates/container/Container"
+
 
 const TextInputCode = `<Input 
   label="Email" 

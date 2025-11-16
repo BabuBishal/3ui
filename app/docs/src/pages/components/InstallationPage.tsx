@@ -1,4 +1,5 @@
 import Container from "../../shared/templates/container/Container";
+import {Spinner} from "3ui"
 
 const InstallationPage = () => {
   return (
@@ -14,9 +15,39 @@ const InstallationPage = () => {
         <Container.content>
           "This feature is not complete yet. Please wait for future updates..."
         </Container.content>
+
+         <Container.content>
+          // Predefined sizes
+<Spinner size="sm" />
+<Spinner size="md" />
+<Spinner size="lg" />
+<Spinner size="xl" />
+
+// Default (medium)
+<Spinner />
+
+// Custom size in pixels
+<Spinner size={100} />
+
+// Custom size as string
+<Spinner size="50px" />
+
+// With custom color
+<Spinner size="lg" color="#ff0000" />
+
+// With custom thickness
+<Spinner size="md"  />
+
+// With label
+<Spinner size="md">Loading...</Spinner>
+
+// Slow spinner
+<Spinner size="lg" speed={2}>Please wait...</Spinner>
+        </Container.content>
       </Container>
     </section>
   );
 };
 
 export default InstallationPage;
+

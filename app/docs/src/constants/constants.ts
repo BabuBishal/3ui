@@ -1,91 +1,34 @@
 export const componentList = [
-  {
-    component: "Buttons",
-    href: "#buttons",
-  },
-  {
-    component: "Badges",
-    href: "#badges",
-  },
-  {
-    component: "Form Elements",
-    href: "#form-elements",
-  },
-  {
-    component: "Cards",
-    href: "#cards",
-  },
-  {
-    component: "Tables",
-    href: "#tables",
-  },
-  {
-    component: "Toast",
-    href: "#toast",
-  },
-  {
-    component: "Modal",
-    href: "#modal",
-  },
-  {
-    component: "Loading Elements",
-    href: "#loading",
-  },
-  {
-    component: "Tabs",
-    href: "#tabs",
-  },
-  {
-    component: "Accordion",
-    href: "#accordion",
-  },
+  { component: "Button", href: "/components/button" },
+  { component: "Badge", href: "/components/badge" },
+  { component: "Card", href: "/components/card" },
+  { component: "Input", href: "/components/input" },
+  { component: "Select", href: "/components/select" },
+  { component: "Textarea", href: "/components/textarea" },
+  { component: "Checkbox", href: "/components/checkbox" },
+  { component: "Toggle", href: "/components/toggle" },
+  { component: "Slider", href: "/components/slider" },
+  { component: "Table", href: "/components/table" },
+  { component: "Modal", href: "/components/modal" },
+  { component: "Toast", href: "/components/toast" },
+  { component: "Tabs", href: "/components/tabs" },
+  { component: "Accordion", href: "/components/accordion" },
+  { component: "Spinner", href: "/components/spinner" },
+  { component: "Loading Dots", href: "/components/loading-dots" },
 ];
 
 export const gettingStartedList = [
-  {
-    title: "Introduction",
-    href: "#introduction",
-  },
-  {
-    title: "Installation",
-    href: "#installation",
-  },
+  { title: "Introduction", href: "/" },
+  { title: "Getting Started", href: "/getting-started" },
+  { title: "Installation", href: "/installation" },
 ];
 
 export const customHooksList = [
-  {
-    title: "useToggle",
-    href: "#useToggle",
-  },
-  {
-    title: "useCopyToClipboard",
-    href: "#useCopyToClipboard",
-  },
-  {
-    title: "useFetch",
-    href: "#useFetch",
-  },
-  {
-    title: "useLocalStorage",
-    href: "#useLocalStorage",
-  },
-  {
-    title: "useIntersectionObserver",
-    href: "#useIntersectionObserver",
-  },
-  {
-    title: "useWindowSize",
-    href: "#useWindowSize",
-  },
-  {
-    title: "useTimeout",
-    href: "#useTimeout",
-  },
-];
-
-export const column = ["S.N", "Name", "Email"];
-export const row = [
-  ["1", "Ram", "ram@gmail.com"],
-  ["2", "Shyam", "shyam@gmail.com"],
-  ["3", "Hari", "hari@gmail.com"],
+  { title: "useToggle", href: "/hooks/use-toggle" },
+  { title: "useCopyToClipboard", href: "/hooks/use-copy-to-clipboard" },
+  { title: "useFetch", href: "/hooks/use-fetch" },
+  { title: "useLocalStorage", href: "/hooks/use-local-storage" },
+  { title: "useIntersectionObserver", href: "/hooks/use-intersection-observer" },
+  { title: "useWindowSize", href: "/hooks/use-window-size" },
+  { title: "useTimeout", href: "/hooks/use-timeout" },
 ];
