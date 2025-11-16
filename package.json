@@ -1,5 +1,5 @@
 {
-  "name": "bishalbabu-monorepo",
+  "name": "3ui-monorepo",
   "private": true,
   "workspaces": [
     "packages/*",

@@ -1,5 +1,5 @@
 // Import styles automatically
-import '../theme.css';
+import "../theme.css";
 
 // ===== HOOKS =====
 export { useCopyToClipboard } from "./hooks/useCopyToClipboard";
@@ -17,7 +17,11 @@ export { useTimeout } from "./hooks/useTimeout";
 
 // Button
 export { Button } from "./components/button";
-export type { ButtonProps, ButtonVariant, ButtonSize } from "./components/button";
+export type {
+  ButtonProps,
+  ButtonVariant,
+  ButtonSize,
+} from "./components/button";
 
 // Card
 export { Card } from "./components/card";
@@ -45,11 +49,20 @@ export type { TableProps, PaginationProps } from "./components/table";
 
 // Toast
 export { ToastProvider, useToast } from "./components/toast";
-export type { ToastOptions, ToastItem, ToastType, ToastContextValue } from "./components/toast";
+export type {
+  ToastOptions,
+  ToastItem,
+  ToastType,
+  ToastContextValue,
+} from "./components/toast";
 
 // Toggle
 export { Toggle } from "./components/toggle";
-export type { ToggleRootProps, ToggleContextType, Variant as ToggleVariant } from "./components/toggle";
+export type {
+  ToggleRootProps,
+  ToggleContextType,
+  Variant as ToggleVariant,
+} from "./components/toggle";
 
 // Slider (now named export only)
 export { Slider } from "./components/slider";
@@ -61,7 +74,10 @@ export type { SpinnerProps } from "./components/spinner";
 
 // LoadingDots
 export { LoadingDots } from "./components/loadingDots";
-export type { LoadingDotsProps, LoadingDotsContextType } from "./components/loadingDots";
+export type {
+  LoadingDotsProps,
+  LoadingDotsContextType,
+} from "./components/loadingDots";
 
 // ===== FORM COMPONENTS =====
 

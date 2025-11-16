@@ -26,17 +26,11 @@ export default defineConfig({
         },
         preserveModules: false,
         exports: 'named',
-        // Bundle CSS into JS instead of separate file
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name === 'style.css') return 'index.css';
-          return assetInfo.name || 'assets/[name]-[hash][extname]';
-        },
       },
     },
     sourcemap: true,
     emptyOutDir: true,
-    // Extract CSS to a separate file
-    cssCodeSplit: false,
+      cssCodeSplit: false,
   },
   resolve: {
     alias: {

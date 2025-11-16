@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "A modern, accessible React component library with TypeScript support",
   "private": false,
+  "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -11,9 +12,7 @@
       "import": "./dist/index.esm.js",
       "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
-    },
-    "./styles": "./dist/theme.css",
-    "./theme.css": "./dist/theme.css"
+    }
   },
   "files": [
     "dist",
@@ -24,7 +23,7 @@
     "*.css"
   ],
   "scripts": {
-    "build": "pnpm run clean && tsc -p tsconfig.build.json && vite build && cp ./theme.css ./dist/theme.css",
+    "build": "pnpm run clean && tsc && vite build",
     "clean": "rm -rf dist",
     "dev": "vite",
     "prepare": "pnpm run build",
