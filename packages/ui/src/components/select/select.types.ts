@@ -1,9 +1,11 @@
 import { ReactNode } from "react";
 
-export type SelectContextType = {
+export interface SelectContextType {
   value: string | null;
   setValue: (val: string) => void;
-};
+  isOpen: boolean;
+  toggleOpen: () => void;
+}
 
 export type SelectRootProps = {
   value?: string;

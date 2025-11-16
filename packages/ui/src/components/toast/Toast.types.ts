@@ -1,9 +1,4 @@
-export type ToastType =
-  | "default"
-  | "success"
-  | "info"
-  | "warning"
-  | "destructive";
+export type ToastType = "default" | "success" | "info" | "warning" | "error";
 
 export type ToastOptions = {
   title?: string;

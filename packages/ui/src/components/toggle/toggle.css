@@ -45,3 +45,7 @@
     calc(var(--toggle-width, 44px) - var(--toggle-thumb-size, 20px) - 4px)
   );
 }
+
+.toggle-label {
+  color: var(--ui-text-primary, #000000);
+}

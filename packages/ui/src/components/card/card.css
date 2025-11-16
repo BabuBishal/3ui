@@ -4,14 +4,14 @@
   background-color: var(--ui-surface, #ffffff);
   color: var(--ui-text-primary, #0f172a);
   border: 1px solid var(--ui-border, #e6e6e6);
-  border-radius: 0.75rem; 
-  box-shadow: var(--ui-shadow, 0 1px 3px rgba(0,0,0,0.1));
-  padding: 0; 
+  border-radius: 0.75rem;
+  box-shadow: var(--ui-shadow, 0 1px 3px rgba(0, 0, 0, 0.1));
+  padding: 0;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
   transition: box-shadow 0.2s ease, transform 0.1s ease;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 /* Add Card sub-components */
@@ -43,4 +43,20 @@
   font-size: 0.875rem;
   color: var(--ui-text-secondary);
   margin-top: 0.25rem;
+}
+
+/* Elevated */
+.ui-card--elevated {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Bordered */
+.ui-card--bordered {
+  border: 2px solid var(--ui-accent, #2563eb);
+}
+
+/* Rounded */
+.ui-card--rounded {
+  border-radius: 1.5rem;
+  border: 1px solid var(--ui-border);
 }

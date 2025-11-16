@@ -87,7 +87,9 @@ const ToggleButton = () => {
 
 const ToggleLabel = ({ children }: { children?: ReactNode }) => {
   const { checked } = useToggle();
-  return <span>{children ?? (checked ? "On" : "Off")}</span>;
+  return (
+    <span className="toggle-label">{children ?? (checked ? "On" : "Off")}</span>
+  );
 };
 
 export const Toggle = {

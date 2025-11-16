@@ -74,7 +74,7 @@
 .toast-variant-warning {
   border-left: 4px solid #d97706;
 }
-.toast-variant-destructive {
+.toast-variant-error {
   border-left: 4px solid #ef4444;
 }
 
