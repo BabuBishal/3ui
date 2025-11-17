@@ -1,0 +1,78 @@
+
+
+.command-tab {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+/* .command-tab:hover {
+  border-color: var(--ui-accent);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+} */
+
+.command-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.command-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.package-icon {
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.command-label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
+.command-content {
+  padding: 1rem;
+  margin: 0;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  overflow-x: auto;
+  white-space: pre;
+  background: var(--background);
+}
+
+/* Scrollbar */
+.command-content::-webkit-scrollbar {
+  height: 6px;
+}
+
+.command-content::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+.command-content::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+.command-content::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .command-tabs {
+    grid-template-columns: 1fr;
+  }
+}

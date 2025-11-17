@@ -1,5 +1,4 @@
-import { useToggle } from "../../../hooks/useToggle";
-import { Button } from "../../../../../../packages/ui/src/components/button/Button";
+import { useToggle, Button } from "l3ui";
 import styles from "./useToggleDemo.module.css";
 
 const UseToggleDemo = () => {

@@ -1,4 +1,4 @@
-import { useIntersectionObserverSingle } from "../../../hooks/useIntersectionObserver";
+import { useIntersectionObserverSingle } from "l3ui";
 import styles from "./useIntersectionObserverDemo.module.css";
 
 function Card({ n }: { n: number }) {

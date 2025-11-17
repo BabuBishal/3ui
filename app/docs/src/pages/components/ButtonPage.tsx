@@ -1,7 +1,8 @@
 import { ComponentPage } from "../../shared/templates/component-page/ComponentPage";
 import { InstallSection } from "../../shared/components/InstallSection/InstallSection";
 import { Showcase } from "../../shared/components/Showcase/Showcase";
-import { Button } from "3ui";
+import { Button, Table } from "l3ui";
+import { PropsTable } from "../../shared/components/PropsTable.tsx/PropsTable";
 
 const ButtonVariantCode = `<Button variant="primary">Primary</Button>
 <Button variant="secondary">Secondary</Button>
@@ -39,7 +40,35 @@ const ButtonLoadingCode = `function LoadingButton() {
   );
 }`;
 
-const importCode = `import { Button } from "3ui";`;
+const buttonProps = [
+  {
+    prop: "variant",
+    type: `"primary" | "secondary" | "outline" | "danger"`,
+    default: `"primary"`,
+    description: "Visual style variant",
+  },
+  {
+    prop: "size",
+    type: `"sm" | "md" | "lg"`,
+    default: `"md"`,
+    description: "Button size",
+  },
+  {
+    prop: "disabled",
+    type: "boolean",
+    default: "false",
+    description: "Disables the button",
+  },
+  {
+    prop: "onClick",
+    type: "() => void",
+    default: "-",
+    description: "Click event handler",
+  },
+];
+
+
+const importCode = `import { Button } from "l3ui";`;
 
 const usageCode = `function MyComponent() {
   return (
@@ -120,162 +149,8 @@ const ButtonPage = () => {
         title="API Reference"
         description="Component props and types"
       >
-        <div style={{ overflowX: 'auto' }}>
-          <table style={{ 
-            width: "100%", 
-            borderCollapse: "collapse",
-            border: '1px solid var(--border)',
-            borderRadius: '0.5rem',
-            overflow: 'hidden'
-          }}>
-            <thead style={{ background: 'var(--surface)' }}>
-              <tr>
-                <th style={{ 
-                  textAlign: "left", 
-                  padding: "0.875rem 1rem",
-                  borderBottom: '2px solid var(--border)',
-                  fontWeight: 600,
-                  fontSize: '0.875rem'
-                }}>
-                  Prop
-                </th>
-                <th style={{ 
-                  textAlign: "left", 
-                  padding: "0.875rem 1rem",
-                  borderBottom: '2px solid var(--border)',
-                  fontWeight: 600,
-                  fontSize: '0.875rem'
-                }}>
-                  Type
-                </th>
-                <th style={{ 
-                  textAlign: "left", 
-                  padding: "0.875rem 1rem",
-                  borderBottom: '2px solid var(--border)',
-                  fontWeight: 600,
-                  fontSize: '0.875rem'
-                }}>
-                  Default
-                </th>
-                <th style={{ 
-                  textAlign: "left", 
-                  padding: "0.875rem 1rem",
-                  borderBottom: '2px solid var(--border)',
-                  fontWeight: 600,
-                  fontSize: '0.875rem'
-                }}>
-                  Description
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style={{ borderBottom: '1px solid var(--border)' }}>
-                <td style={{ padding: "0.875rem 1rem" }}>
-                  <code style={{ 
-                    background: 'var(--surface)',
-                    padding: '0.25rem 0.5rem',
-                    borderRadius: '0.25rem',
-                    fontSize: '0.8125rem',
-                    fontWeight: 500
-                  }}>
-                    variant
-                  </code>
-                </td>
-                <td style={{ padding: "0.875rem 1rem", fontSize: '0.8125rem' }}>
-                  <code>"primary" | "secondary" | "outline" | "danger"</code>
-                </td>
-                <td style={{ padding: "0.875rem 1rem", fontSize: '0.8125rem' }}>
-                  <code>"primary"</code>
-                </td>
-                <td style={{ 
-                  padding: "0.875rem 1rem",
-                  fontSize: '0.8125rem',
-                  color: 'var(--text-secondary)'
-                }}>
-                  Visual style variant
-                </td>
-              </tr>
-              <tr style={{ borderBottom: '1px solid var(--border)' }}>
-                <td style={{ padding: "0.875rem 1rem" }}>
-                  <code style={{ 
-                    background: 'var(--surface)',
-                    padding: '0.25rem 0.5rem',
-                    borderRadius: '0.25rem',
-                    fontSize: '0.8125rem',
-                    fontWeight: 500
-                  }}>
-                    size
-                  </code>
-                </td>
-                <td style={{ padding: "0.875rem 1rem", fontSize: '0.8125rem' }}>
-                  <code>"sm" | "md" | "lg"</code>
-                </td>
-                <td style={{ padding: "0.875rem 1rem", fontSize: '0.8125rem' }}>
-                  <code>"md"</code>
-                </td>
-                <td style={{ 
-                  padding: "0.875rem 1rem",
-                  fontSize: '0.8125rem',
-                  color: 'var(--text-secondary)'
-                }}>
-                  Button size
-                </td>
-              </tr>
-              <tr style={{ borderBottom: '1px solid var(--border)' }}>
-                <td style={{ padding: "0.875rem 1rem" }}>
-                  <code style={{ 
-                    background: 'var(--surface)',
-                    padding: '0.25rem 0.5rem',
-                    borderRadius: '0.25rem',
-                    fontSize: '0.8125rem',
-                    fontWeight: 500
-                  }}>
-                    disabled
-                  </code>
-                </td>
-                <td style={{ padding: "0.875rem 1rem", fontSize: '0.8125rem' }}>
-                  <code>boolean</code>
-                </td>
-                <td style={{ padding: "0.875rem 1rem", fontSize: '0.8125rem' }}>
-                  <code>false</code>
-                </td>
-                <td style={{ 
-                  padding: "0.875rem 1rem",
-                  fontSize: '0.8125rem',
-                  color: 'var(--text-secondary)'
-                }}>
-                  Disables the button
-                </td>
-              </tr>
-              <tr>
-                <td style={{ padding: "0.875rem 1rem" }}>
-                  <code style={{ 
-                    background: 'var(--surface)',
-                    padding: '0.25rem 0.5rem',
-                    borderRadius: '0.25rem',
-                    fontSize: '0.8125rem',
-                    fontWeight: 500
-                  }}>
-                    onClick
-                  </code>
-                </td>
-                <td style={{ padding: "0.875rem 1rem", fontSize: '0.8125rem' }}>
-                  <code>() =&gt; void</code>
-                </td>
-                <td style={{ padding: "0.875rem 1rem", fontSize: '0.8125rem' }}>
-                  <code>-</code>
-                </td>
-                <td style={{ 
-                  padding: "0.875rem 1rem",
-                  fontSize: '0.8125rem',
-                  color: 'var(--text-secondary)'
-                }}>
-                  Click event handler
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <PropsTable data={buttonProps} />
+
       </ComponentPage.Section>
     </ComponentPage>
   );

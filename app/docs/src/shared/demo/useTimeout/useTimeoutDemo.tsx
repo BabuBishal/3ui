@@ -1,6 +1,5 @@
 import styles from "./useTimeoutDemo.module.css";
-import { Button } from "../../../../../../packages/ui/src/components/button/Button";
-import { useTimeout } from "../../../hooks/useTimeout";
+import { useTimeout, Button } from "l3ui"
 import { useState } from "react";
 
 const UseTimeoutDemo = () => {

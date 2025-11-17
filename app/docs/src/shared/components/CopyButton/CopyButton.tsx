@@ -1,4 +1,4 @@
-import { useCopyToClipboard } from "3ui";
+import { useCopyToClipboard } from "l3ui";
 import "./CopyButton.css";
 
 interface CopyButtonProps {

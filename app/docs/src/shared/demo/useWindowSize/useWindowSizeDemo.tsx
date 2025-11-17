@@ -1,6 +1,6 @@
 import styles from "./useWindowSizeDemo.module.css";
 
-import useWindowSize from "../../../hooks/useWindowSize";
+import {useWindowSize} from "l3ui";
 
 const UseWindowSizeDemo = () => {
   const windowSize = useWindowSize();

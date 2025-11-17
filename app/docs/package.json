@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "3ui": "workspace:*",
+    "l3ui": "workspace:*",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router": "^7.9.6",

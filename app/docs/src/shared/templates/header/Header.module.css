@@ -10,7 +10,10 @@
   height: 5rem;
   background-color: var(--surface);
   color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color, rgba(0, 0, 0, 0.1));
 }
+
+
 .navbar {
   padding: 0 1rem;
   max-width: 1300px;
@@ -23,7 +26,10 @@
 }
 
 .headerIcon {
+  text-decoration: none;
   font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
 .navmenu {
@@ -57,6 +63,35 @@
   color: var(--text-secondary);
 }
 
+.themeToggle {
+  background: var(--background);
+  border: 1.5px solid var(--border-color, rgba(0, 0, 0, 0.1));
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+  padding: 0;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.themeToggle:hover {
+  background: var(--surface);
+  border-color: var(--text-primary);
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.themeToggle:active {
+  transform: scale(0.95);
+}
+
 @media (max-width: 1034px) {
   .menuButton {
     display: block;
@@ -73,5 +108,11 @@
 @media (max-width: 768px) {
   .headerIcon {
     font-size: 1.1rem;
+  }
+
+  .themeToggle {
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 0.9rem;
   }
 }

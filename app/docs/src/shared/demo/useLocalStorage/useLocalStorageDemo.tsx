@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./useLocalStorageDemo.module.css";
-import { useLocalStorage } from "../../../hooks/useLocalStorage";
-import { Button } from "../../../../../../packages/ui/src/components/button/Button";
-import { useLocalStorageSyncExternal } from "../../../hooks/useLocalStorageUsingSyncExternalStorage";
+import { useLocalStorage, useLocalStorageSyncExternal, Button } from "l3ui";
+// import { useLocalStorageSyncExternal } from "../../../hooks/useLocalStorageUsingSyncExternalStorage";
 
 export default function UseLocalStorageDemo() {
   const [stored, setStored, removeStored] = useLocalStorage<string>(

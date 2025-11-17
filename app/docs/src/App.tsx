@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import Sidebar from "./shared/templates/sidebar/Sidebar";
 import Header from "./shared/templates/header/Header";
-import { ToastProvider } from "3ui";
+import { ToastProvider } from "l3ui";
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -12,7 +12,7 @@ function App() {
   const closeSidebar = () => setSidebarOpen(false);
 
   return (
-    // <ToastProvider>
+    <ToastProvider>
       <div className="App">
         <Header onMenuClick={toggleSidebar} />
         <main className="main">
@@ -22,7 +22,7 @@ function App() {
           </div>
         </main>
       </div>
-    // </ToastProvider>
+    </ToastProvider>
   );
 }
 

@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
-import { Button } from "3ui";
+import { Button } from "l3ui";
 import "./Homepage.css";
 
 const Homepage = () => {
   return (
     <div className="homepage">
       <section className="hero">
-        <h1 className="hero-title">3UI Component Library</h1>
+        <h1 className="hero-title">l3UI Component Library</h1>
         <p className="hero-description">
           A modern, accessible React component library with TypeScript support.
           Beautiful components, powerful hooks, and complete customization.
         </p>
         <div className="hero-actions">
-          <Link to="/getting-started">
+          <Link to="/installation">
             <Button variant="primary" size="lg">
               Get Started
             </Button>
@@ -77,7 +77,7 @@ pnpm add 3ui`}</code>
         </p>
         <div className="code-block">
           <pre>
-            <code>{`import { Button, Input, useToast } from "3ui";
+            <code>{`import { Button, Input, useToast } from "l3ui";
 
 function App() {
   return (

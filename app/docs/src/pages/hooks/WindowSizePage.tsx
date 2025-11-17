@@ -1,33 +1,55 @@
-import Container from "../../shared/templates/container/Container";
-import CodeBlock from "../../shared/templates/codeBlock/CodeBlock";
-import UseWindowSizeDemo from "../../shared/demo/useWindowSize/useWindowSizeDemo";
+import { ComponentPage } from "../../shared/templates/component-page/ComponentPage";
+import { Showcase } from "../../shared/components/Showcase/Showcase";
+import { PropsTable } from "../../shared/components/PropsTable.tsx/PropsTable";
+import { InstallSection } from "../../shared/components/InstallSection/InstallSection";
+import { useWindowSize } from "l3ui";
 
-const WindowSizeCode = ` const windowSize = useWindowSize();
+const importCode = `import { useWindowSize } from "l3ui";`;
+
+const usageCodeEx = `function MyComponent() {
+  const { width, height } = useWindowSize();
+
   return (
-    <div className={styles.container}>
-      <h2 className={styles.label}>UseWindowSize Demo</h2>
-      <p className={styles.desc}>The window size is currently:</p>
-      <p className={styles.desc}>Window Width: {windowSize?.width}</p>
-      <p className={styles.desc}>Window Height: {windowSize?.height}</p>
+    <div>
+      {width} x {height}
     </div>
-  );`;
+  );
+}`;
+
+const code = `const windowSize = useWindowSize();
+return (<div>{windowSize.width} x {windowSize.height}</div>);
+`;
+
+const props = [
+  { prop: "opts", type: "{ useRaf?: boolean }", default: "{ useRaf: true }", description: "Options to control raf throttling" },
+  { prop: "returns", type: "{ width?: number, height?: number }", default: "{ width?: number, height?: number }", description: "Current window size (undefined during SSR)" },
+];
 
 const UseWindowSizePage = () => {
+  function Demo() {
+    const { width, height } = useWindowSize();
+    return (
+      <div>
+        <div>Width: {width}</div>
+        <div>Height: {height}</div>
+      </div>
+    );
+  }
+
   return (
-    <section id="useWindowSize" className="section useToggle-section">
-      <h2 className="section-heading">UseWindowSize hook</h2>
-      <Container
-        title="useWindowSize"
-        desc="Custom hook to get the current window size and update on resize"
-      >
-        <Container.content>
-          <UseWindowSizeDemo />
-        </Container.content>
-        <Container.code>
-          <CodeBlock code={WindowSizeCode} />
-        </Container.code>
-      </Container>
-    </section>
+    <ComponentPage title="useWindowSize" description="Track the current window width/height with optional RAF throttling">
+      <InstallSection componentName="useWindowSize" importCode={importCode} usageCode={usageCodeEx} />
+
+      <ComponentPage.Section title="Basic usage" description="Read current window size">
+        <Showcase title="useWindowSize" description="Window size hook" code={code}>
+          <Demo />
+        </Showcase>
+      </ComponentPage.Section>
+
+      <ComponentPage.Section title="API Reference" description="Options and return value">
+        <PropsTable data={props} />
+      </ComponentPage.Section>
+    </ComponentPage>
   );
 };
 

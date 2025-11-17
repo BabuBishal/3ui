@@ -1,4 +1,4 @@
-import { useFetch } from "../../../hooks/useFetch";
+import { useFetch } from "l3ui";
 import styles from "./useFetchDemo.module.css";
 
 export default function UseFetchDemo() {
