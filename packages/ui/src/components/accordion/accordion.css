@@ -88,6 +88,10 @@
   transform: scale(1.05);
 }
 
+.accordion-trigger:hover .accordion-icon-open {
+  transform: rotate(180deg) scale(1.05);
+}
+
 .accordion-icon-open {
   transform: rotate(180deg) scale(1.05);
   /* background: var(--ui-text-primary, #0f172a); */
@@ -162,9 +166,13 @@
 }
 
 [data-theme="dark"] .accordion-trigger:hover .accordion-icon {
- border-color: var(--ui-text-primary, #f8fafc);
+  border-color: var(--ui-text-primary, #f8fafc);
   background: var(--ui-surface, #1e293b);
   color: var(--ui-text-primary, #f8fafc);
+}
+
+[data-theme="dark"] .accordion-trigger:hover .accordion-icon-open {
+  transform: rotate(180deg) scale(1.05);
 }
 
 [data-theme="dark"] .accordion-icon-open {

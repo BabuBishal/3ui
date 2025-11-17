@@ -4,6 +4,7 @@ import { RouterProvider } from "react-router/dom";
 import ThemeProvider from "./context/themeContext";
 import "./index.css";
 import App from "./App";
+import { Suspense, lazy } from "react";
 
 // Pages
 import Homepage from "./pages/Homepage";
@@ -28,14 +29,16 @@ import AccordionPage from "./pages/components/AccordionPage";
 import SpinnerPage from "./pages/components/SpinnerPage";
 import LoadingDotsPage from "./pages/components/LoadingDotsPage";
 
-// Hooks Pages
-import UseTogglePage from "./pages/hooks/UseTogglePage";
-import UseCopyToClipboardPage from "./pages/hooks/CopyToClipboardPage";
-import UseFetchPage from "./pages/hooks/UseFetchPage";
-import UseLocalStoragePage from "./pages/hooks/UseLocalStoragePage";
-import UseIntersectionObserverPage from "./pages/hooks/UseIntersectionObserverPage";
-import UseWindowSizePage from "./pages/hooks/WindowSizePage";
-import UseTimeoutPage from "./pages/hooks/TimeoutPage";
+// Lazy load hooks pages to avoid SSR issues
+const UseTogglePage = lazy(() => import("./pages/hooks/UseTogglePage"));
+const UseCopyToClipboardPage = lazy(() => import("./pages/hooks/CopyToClipboardPage"));
+const UseFetchPage = lazy(() => import("./pages/hooks/UseFetchPage"));
+const UseLocalStoragePage = lazy(() => import("./pages/hooks/UseLocalStoragePage"));
+const UseIntersectionObserverPage = lazy(() => import("./pages/hooks/UseIntersectionObserverPage"));
+const UseWindowSizePage = lazy(() => import("./pages/hooks/WindowSizePage"));
+const UseTimeoutPage = lazy(() => import("./pages/hooks/TimeoutPage"));
+
+const LoadingFallback = () => <div style={{ padding: "2rem", textAlign: "center" }}>Loading...</div>;
 
 const router = createBrowserRouter([
   {
@@ -65,13 +68,13 @@ const router = createBrowserRouter([
       { path: "components/loading-dots", element: <LoadingDotsPage /> },
       
       // Hooks
-      { path: "hooks/use-toggle", element: <UseTogglePage /> },
-      { path: "hooks/use-copy-to-clipboard", element: <UseCopyToClipboardPage /> },
-      { path: "hooks/use-fetch", element: <UseFetchPage /> },
-      { path: "hooks/use-local-storage", element: <UseLocalStoragePage /> },
-      { path: "hooks/use-intersection-observer", element: <UseIntersectionObserverPage /> },
-      { path: "hooks/use-window-size", element: <UseWindowSizePage /> },
-      { path: "hooks/use-timeout", element: <UseTimeoutPage /> },
+      { path: "hooks/use-toggle", element: <Suspense fallback={<LoadingFallback />}><UseTogglePage /></Suspense> },
+      { path: "hooks/use-copy-to-clipboard", element: <Suspense fallback={<LoadingFallback />}><UseCopyToClipboardPage /></Suspense> },
+      { path: "hooks/use-fetch", element: <Suspense fallback={<LoadingFallback />}><UseFetchPage /></Suspense> },
+      { path: "hooks/use-local-storage", element: <Suspense fallback={<LoadingFallback />}><UseLocalStoragePage /></Suspense> },
+      { path: "hooks/use-intersection-observer", element: <Suspense fallback={<LoadingFallback />}><UseIntersectionObserverPage /></Suspense> },
+      { path: "hooks/use-window-size", element: <Suspense fallback={<LoadingFallback />}><UseWindowSizePage /></Suspense> },
+      { path: "hooks/use-timeout", element: <Suspense fallback={<LoadingFallback />}><UseTimeoutPage /></Suspense> },
     ],
   },
 ]);

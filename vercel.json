@@ -1,0 +1,7 @@
+{
+  "buildCommand": "pnpm build",
+  "outputDirectory": "app/docs/dist",
+  "installCommand": "pnpm install",
+  "framework": "vite",
+  "nodeVersion": "20.x"
+}

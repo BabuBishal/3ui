@@ -14,4 +14,18 @@ export default defineConfig({
       "@ui": path.resolve(__dirname, "../../packages/ui/src"),
     },
   },
+  ssr: {
+    noExternal: ["l3ui"],
+  },
+  build: {
+    target: "esnext",
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Split l3ui to its own chunk to avoid loading all hooks at once
+          l3ui: ["l3ui"],
+        },
+      },
+    },
+  },
 });

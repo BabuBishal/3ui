@@ -55,7 +55,7 @@ const UseFetchPage = () => {
         </div>
         <div>
           {loading && <div>Loading...</div>}
-          {error && <div style={{ color: "var(--ui-danger)" }}>{error.message}</div>}
+          {error && <div style={{ color: "var(--ui-danger)" }}>{error.message || "Error loading data"}</div>}
           {data && <div><strong>{data.title}</strong><p>{data.body}</p></div>}
         </div>
       </div>
