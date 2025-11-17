@@ -71,7 +71,11 @@ Modal.Content = function ModalContent({
 
   // Prevent rendering if closed
   if (!isOpen) return null;
+  
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
+  if (!mounted) return null;
   // Create portal container
   const el = document.getElementById("modal-root");
   if (!el) {
@@ -174,17 +178,17 @@ Modal.CloseIcon = function ModalCloseIcon({
   if (!modal) throw new Error("Modal.CloseIcon must be inside <Modal>");
 
   return (
-    <button 
-      onClick={modal.close} 
+    <button
+      onClick={modal.close}
       className={cn("modal-close-icon", className)}
       aria-label="Close modal"
     >
-      <svg 
-        width="20" 
-        height="20" 
-        viewBox="0 0 24 24" 
-        fill="none" 
-        stroke="currentColor" 
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
