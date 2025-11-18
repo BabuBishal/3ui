@@ -1,40 +1,40 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
-import { resolve } from 'path';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
+import dts from "vite-plugin-dts";
+import { resolve } from "path";
 
 export default defineConfig({
   plugins: [
     react(),
-    cssInjectedByJsPlugin(), // This injects CSS into JS
+    cssInjectedByJsPlugin(),
+    dts({
+      insertTypesEntry: true,
+      outDir: "dist",
+      rollupTypes: true,
+      tsconfigPath: "./tsconfig.json",
+    }),
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
-      name: '3UI',
-      formats: ['es', 'cjs'],
+      entry: resolve(__dirname, "src/index.ts"),
+      name: "l3ui",
+      formats: ["es", "cjs"],
       fileName: (format) => {
-        if (format === 'es') return 'index.esm.js';
-        if (format === 'cjs') return 'index.js';
+        if (format === "es") return "index.esm.js";
+        if (format === "cjs") return "index.js";
         return `index.${format}.js`;
       },
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
-      output: {
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
-          'react/jsx-runtime': 'jsxRuntime',
-        },
-      },
+      external: ["react", "react-dom", "react/jsx-runtime"],
     },
     sourcemap: true,
     emptyOutDir: true,
   },
   resolve: {
     alias: {
-      '@': resolve(__dirname, './src'),
+      "@": resolve(__dirname, "./src"),
     },
   },
 });
