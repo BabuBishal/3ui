@@ -88,6 +88,12 @@ const tabsProps = [
     default: "-",
     description: "Callback when active tab changes",
   },
+  {
+    prop: "className",
+    type: "string",
+    default: "-",
+    description: "Additional CSS class",
+  },
 ];
 
 const triggerProps = [
@@ -103,6 +109,27 @@ const triggerProps = [
     default: "-",
     description: "Trigger label text",
   },
+  {
+    prop: "className",
+    type: "string",
+    default: "-",
+    description: "Additional CSS class",
+  },
+];
+
+const listProps = [
+  {
+    prop: "children",
+    type: "ReactNode",
+    default: "-",
+    description: "Tab triggers",
+  },
+  {
+    prop: "className",
+    type: "string",
+    default: "-",
+    description: "Additional CSS class",
+  },
 ];
 
 const contentProps = [
@@ -117,6 +144,12 @@ const contentProps = [
     type: "ReactNode",
     default: "-",
     description: "Tab content",
+  },
+  {
+    prop: "className",
+    type: "string",
+    default: "-",
+    description: "Additional CSS class",
   },
 ];
 
@@ -202,6 +235,13 @@ const TabsPage = () => {
         description="Root tabs component props"
       >
         <PropsTable data={tabsProps} />
+      </ComponentPage.Section>
+
+      <ComponentPage.Section
+        title="API Reference - Tabs.List"
+        description="Tab list container props"
+      >
+        <PropsTable data={listProps} />
       </ComponentPage.Section>
 
       <ComponentPage.Section

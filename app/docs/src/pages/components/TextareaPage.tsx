@@ -105,6 +105,12 @@ const textareaFieldProps = [
     default: "-",
     description: "Maximum number of characters allowed",
   },
+  {
+    prop: "className",
+    type: "string",
+    default: "-",
+    description: "Additional CSS class",
+  },
 ];
 
 const textareaLabelProps = [

@@ -120,6 +120,12 @@ const toastProps = [
     default: "3000",
     description: "Duration in milliseconds (0 for persistent)",
   },
+  {
+    prop: "className",
+    type: "string",
+    default: "-",
+    description: "Additional CSS class for the toast item",
+  },
 ];
 
 const useToastReturnProps = [

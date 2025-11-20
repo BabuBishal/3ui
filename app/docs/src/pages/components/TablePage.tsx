@@ -167,6 +167,12 @@ const headerProps = [
     default: "-",
     description: "Header rows and cells",
   },
+  {
+    prop: "className",
+    type: "string",
+    default: "-",
+    description: "Additional CSS class",
+  },
 ];
 
 const bodyProps = [
@@ -175,6 +181,12 @@ const bodyProps = [
     type: "ReactNode",
     default: "-",
     description: "Body rows and cells",
+  },
+  {
+    prop: "className",
+    type: "string",
+    default: "-",
+    description: "Additional CSS class",
   },
 ];
 
@@ -185,6 +197,12 @@ const rowProps = [
     default: "-",
     description: "Head or Cell elements",
   },
+  {
+    prop: "className",
+    type: "string",
+    default: "-",
+    description: "Additional CSS class",
+  },
 ];
 
 const headProps = [
@@ -193,6 +211,12 @@ const headProps = [
     type: "ReactNode",
     default: "-",
     description: "Header cell content",
+  },
+  {
+    prop: "className",
+    type: "string",
+    default: "-",
+    description: "Additional CSS class",
   },
 ];
 
@@ -208,6 +232,12 @@ const cellProps = [
     type: "string",
     default: "-",
     description: "Label for responsive display on mobile",
+  },
+  {
+    prop: "className",
+    type: "string",
+    default: "-",
+    description: "Additional CSS class",
   },
 ];
 

@@ -68,6 +68,12 @@ const selectProps = [
     default: "false",
     description: "Removes default styles for custom styling",
   },
+  {
+    prop: "className",
+    type: "string",
+    default: "-",
+    description: "Additional CSS class",
+  },
 ];
 
 const SelectPage = () => {

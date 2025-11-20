@@ -121,6 +121,12 @@ const sliderFieldProps = [
     default: "-",
     description: "Callback when slider value changes",
   },
+  {
+    prop: "className",
+    type: "string",
+    default: "-",
+    description: "Additional CSS class",
+  },
 ];
 
 const SliderPage = () => {

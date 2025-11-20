@@ -22,17 +22,23 @@ export const Tabs = ({ defaultValue, children, className }: TabsProps) => {
 };
 
 /* LIST */
-export const List = ({ children }: { children: ReactNode }) => (
-  <div className="tabList">{children}</div>
-);
+export const List = ({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) => <div className={cn("tabList", className)}>{children}</div>;
 
 /* TRIGGER */
 export const Trigger = ({
   value,
   children,
+  className,
 }: {
   value: string;
   children: ReactNode;
+  className?: string;
 }) => {
   const context = useContext(TabsContext);
   if (!context) throw new Error("Trigger must be used inside <Tabs>");
@@ -46,7 +52,7 @@ export const Trigger = ({
   return (
     <button
       onClick={tabChange}
-      className={cn("tabTrigger", isActive && "active")}
+      className={cn("tabTrigger", isActive && "active", className)}
       role="tab"
       aria-selected={isActive}
     >
@@ -59,9 +65,11 @@ export const Trigger = ({
 export const Content = ({
   value,
   children,
+  className,
 }: {
   value: string;
   children: ReactNode;
+  className?: string;
 }) => {
   const context = useContext(TabsContext);
   if (!context) throw new Error("Content must be used inside <Tabs>");
@@ -69,7 +77,7 @@ export const Content = ({
   if (context.activeTab !== value) return null;
 
   return (
-    <div className={cn("tabContent")} role="tabpanel">
+    <div className={cn("tabContent", className)} role="tabpanel">
       {children}
     </div>
   );

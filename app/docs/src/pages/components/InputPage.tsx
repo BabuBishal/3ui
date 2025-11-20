@@ -61,6 +61,12 @@ const inputProps = [
     default: "-",
     description: "Placeholder text shown inside the input",
   },
+  {
+    prop: "className",
+    type: "string",
+    default: "-",
+    description: "Additional CSS class",
+  },
 ];
 
 const InputPage = () => {

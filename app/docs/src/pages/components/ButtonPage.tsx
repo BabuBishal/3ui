@@ -65,6 +65,12 @@ const buttonProps = [
     default: "-",
     description: "Click event handler",
   },
+  {
+    prop: "className",
+    type: "string",
+    default: "-",
+    description: "Additional CSS class",
+  },
 ];
 
 

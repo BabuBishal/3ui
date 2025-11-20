@@ -30,13 +30,19 @@ export const Input = ({
   );
 };
 
-Input.Label = ({ children }: { children: ReactNode }) => {
+Input.Label = ({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) => {
   const context = useContext(InputContext);
   if (!context)
     throw new Error("Input.Label must be used inside a Input component.");
 
   return (
-    <label htmlFor={context.id} className="ui-input-label">
+    <label htmlFor={context.id} className={cn("ui-input-label", className)}>
       {children}
     </label>
   );
@@ -45,6 +51,7 @@ Input.Label = ({ children }: { children: ReactNode }) => {
 Input.Field = ({
   type = "text",
   onChange,
+  className,
   ...props
 }: InputHTMLAttributes<HTMLInputElement>) => {
   const context = useContext(InputContext);
@@ -66,12 +73,18 @@ Input.Field = ({
       onChange={handleChange}
       disabled={disabled}
       placeholder={placeholder}
-      className="ui-input-field"
+      className={cn("ui-input-field", className)}
       {...props}
     />
   );
 };
 
-Input.Error = ({ children }: { children: ReactNode }) => {
-  return <span className="ui-input-error">{children}</span>;
+Input.Error = ({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) => {
+  return <span className={cn("ui-input-error", className)}>{children}</span>;
 };

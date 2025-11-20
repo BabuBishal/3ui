@@ -63,6 +63,12 @@ const badgeProps = [
     default: "false",
     description: "Removes all default styles",
   },
+  {
+    prop: "className",
+    type: "string",
+    default: "-",
+    description: "Additional CSS class",
+  },
 ];
 
 const importCode = `import { Badge } from "l3ui";`;

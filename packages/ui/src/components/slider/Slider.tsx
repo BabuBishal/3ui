@@ -31,10 +31,12 @@ Slider.Label = ({
   children,
   htmlFor,
   showValue = true,
+  className,
 }: {
   children: ReactNode;
   htmlFor?: string;
   showValue?: boolean;
+  className?: string;
 }) => {
   const context = useContext(SliderContext);
   if (!context)
@@ -43,7 +45,7 @@ Slider.Label = ({
   const { value } = context;
 
   return (
-    <label htmlFor={htmlFor} className="ui-slider-label">
+    <label htmlFor={htmlFor} className={cn("ui-slider-label", className)}>
       {children}
       {showValue && <span className="ui-slider-value">{value}</span>}
     </label>
@@ -55,11 +57,13 @@ Slider.Field = ({
   placeholder,
   step = 1,
   onChange,
+  className,
 }: {
   type?: string;
   placeholder?: string;
   step?: number;
   onChange?: (value: number) => void;
+  className?: string;
 }) => {
   const context = useContext(SliderContext);
   if (!context)
@@ -89,7 +93,7 @@ Slider.Field = ({
     <input
       type={type}
       id={id as string}
-      className="ui-slider-field"
+      className={cn("ui-slider-field", className)}
       value={value}
       onChange={handleChange}
       placeholder={placeholder}

@@ -34,6 +34,7 @@ export const Textarea = ({
 Textarea.Field = ({
   placeholder,
   rows = 4,
+  className,
   ...props
 }: TextareaHTMLAttributes<HTMLTextAreaElement>) => {
   const context = useContext(TextareaContext);
@@ -48,7 +49,7 @@ Textarea.Field = ({
 
   return (
     <textarea
-      className="textarea-field"
+      className={cn("textarea-field", className)}
       value={value}
       onChange={handleChange}
       placeholder={placeholder}

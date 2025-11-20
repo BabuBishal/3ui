@@ -116,6 +116,12 @@ const toggleRootProps = [
     default: `"primary"`,
     description: "Color variant for the toggle",
   },
+  {
+    prop: "className",
+    type: "string",
+    default: "-",
+    description: "Additional CSS class",
+  },
 ];
 
 const TogglePage = () => {
