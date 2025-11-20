@@ -10,7 +10,7 @@
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
-  background-color: var(--ui-text-primary);
+  background-color: var(--ui-text-primary, #0f172a);
   animation: loading-dot-bounce 0.6s infinite ease-in-out;
 }
 
@@ -55,5 +55,5 @@
 .loading-dots-label {
   margin-left: 0.5rem;
   font-size: 0.95rem;
-  color: var(--ui-text-primary);
+  color: var(--ui-text-primary, #0f172a);
 }

@@ -6,7 +6,7 @@ const Homepage = () => {
   return (
     <div className="homepage">
       <section className="hero">
-        <h1 className="hero-title">l3UI Component Library</h1>
+        <h1 className="hero-title">l3ui Component Library</h1>
         <p className="hero-description">
           A modern, accessible React component library with TypeScript support.
           Beautiful components, powerful hooks, and complete customization.
@@ -65,11 +65,11 @@ const Homepage = () => {
         <h2 className="quick-start-title">Quick Start</h2>
         <div className="code-block">
           <pre>
-            <code>{`npm install 3ui
+            <code>{`npm install l3ui
 # or
-yarn add 3ui
+yarn add l3ui
 # or
-pnpm add 3ui`}</code>
+pnpm add l3ui`}</code>
           </pre>
         </div>
         <p className="quick-start-description">

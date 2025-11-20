@@ -5,6 +5,7 @@ export interface SelectContextType {
   setValue: (val: string) => void;
   isOpen: boolean;
   toggleOpen: () => void;
+  unstyled?: boolean;
 }
 
 export type SelectRootProps = {

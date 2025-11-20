@@ -41,7 +41,7 @@ function MyComponent() {
         variant="primary" 
         onClick={() => notify({
           title: "Success!",
-          description: "Welcome to 3UI",
+          description: "Welcome to l3UI",
           type: "success"
         })}
       >

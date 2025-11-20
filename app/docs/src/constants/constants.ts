@@ -73,11 +73,11 @@ export const faqItems = [
   },
   {
     q: "Is TypeScript supported?",
-    a: `Absolutely! 3UI is built with TypeScript and includes full type definitions for all components and hooks.`,
+    a: `Absolutely! l3ui is built with TypeScript and includes full type definitions for all components and hooks.`,
   },
   {
     q: "What's the bundle size?",
-    a: `3UI is lightweight with zero dependencies. Components are tree-shakeable, so you only bundle what you use.`,
+    a: `l3ui is lightweight with zero dependencies. Components are tree-shakeable, so you only bundle what you use.`,
   },
   {
     q: "How do I report bugs?",

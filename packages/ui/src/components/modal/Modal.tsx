@@ -3,13 +3,22 @@ import {
   useContext,
   useState,
   useEffect,
-  type ReactNode,
   useCallback,
 } from "react";
 import ReactDOM from "react-dom";
 import { cn } from "@/utils/cn";
 import "./modal.css";
-import { type ModalContextType } from "./modal.types";
+import {
+  type ModalContextType,
+  type ModalProps,
+  type ModalTriggerProps,
+  type ModalContentProps,
+  type ModalHeaderProps,
+  type ModalBodyProps,
+  type ModalFooterProps,
+  type ModalCloseProps,
+  type ModalCloseIconProps,
+} from "./modal.types";
 
 const ModalContext = createContext<ModalContextType | undefined>(undefined);
 
@@ -17,11 +26,7 @@ export const Modal = ({
   defaultOpen = false,
   children,
   className,
-}: {
-  defaultOpen?: boolean;
-  children: ReactNode;
-  className?: string;
-}) => {
+}: ModalProps) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   const open = useCallback(() => setIsOpen(true), []);
@@ -40,10 +45,7 @@ export const Modal = ({
 Modal.Trigger = function ModalTrigger({
   children,
   className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
+}: ModalTriggerProps) {
   const modal = useContext(ModalContext);
   if (!modal) throw new Error("Modal.Trigger must be used inside <Modal>");
 
@@ -60,29 +62,13 @@ Modal.Trigger = function ModalTrigger({
 Modal.Content = function ModalContent({
   children,
   className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
+}: ModalContentProps) {
   const modal = useContext(ModalContext);
   if (!modal) throw new Error("Modal.Content must be inside <Modal>");
 
   const { isOpen, close } = modal;
-
-  // Prevent rendering if closed
-  if (!isOpen) return null;
-  
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
-
-  if (!mounted) return null;
-  // Create portal container
-  const el = document.getElementById("modal-root");
-  if (!el) {
-    console.error("You need a <div id='modal-root'></div> in your HTML.");
-    return null;
-  }
-
   // Escape key to close
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -91,6 +77,18 @@ Modal.Content = function ModalContent({
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, [close]);
+
+  // Prevent rendering if closed
+  if (!isOpen) return null;
+
+  if (!mounted) return null;
+  // Create portal container
+  const el = document.getElementById("modal-root");
+
+  if (!el) {
+    console.error("You need a <div id='modal-root'></div> in your HTML.");
+    return null;
+  }
 
   return ReactDOM.createPortal(
     <div className="modal-overlay" onClick={close}>
@@ -110,52 +108,28 @@ Modal.Content = function ModalContent({
 // ─────────────────────────────
 // Header
 // ─────────────────────────────
-Modal.Header = function ModalHeader({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
+Modal.Header = function ModalHeader({ children, className }: ModalHeaderProps) {
   return <div className={cn("modal-header", className)}>{children}</div>;
 };
 
 // ─────────────────────────────
 // Body
 // ─────────────────────────────
-Modal.Body = function ModalBody({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
+Modal.Body = function ModalBody({ children, className }: ModalBodyProps) {
   return <div className={cn("modal-body", className)}>{children}</div>;
 };
 
 // ─────────────────────────────
 // Footer
 // ─────────────────────────────
-Modal.Footer = function ModalFooter({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
+Modal.Footer = function ModalFooter({ children, className }: ModalFooterProps) {
   return <div className={cn("modal-footer", className)}>{children}</div>;
 };
 
 // ─────────────────────────────
 // Close Button
 // ─────────────────────────────
-Modal.Close = function ModalClose({
-  children,
-  className,
-}: {
-  children?: ReactNode;
-  className?: string;
-}) {
+Modal.Close = function ModalClose({ children, className }: ModalCloseProps) {
   const modal = useContext(ModalContext);
   if (!modal) throw new Error("Modal.Close must be inside <Modal>");
 
@@ -169,11 +143,7 @@ Modal.Close = function ModalClose({
 // ─────────────────────────────
 // Close Icon (X button in corner)
 // ─────────────────────────────
-Modal.CloseIcon = function ModalCloseIcon({
-  className,
-}: {
-  className?: string;
-}) {
+Modal.CloseIcon = function ModalCloseIcon({ className }: ModalCloseIconProps) {
   const modal = useContext(ModalContext);
   if (!modal) throw new Error("Modal.CloseIcon must be inside <Modal>");
 

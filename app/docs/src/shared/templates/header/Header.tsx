@@ -21,7 +21,7 @@ const Header = ({ onMenuClick }: HeaderProps) => {
             ☰
           </button>
         )}
-        <Link to={"/"} className={styles.headerIcon}>3UI</Link>
+        <Link to={"/"} className={styles.headerIcon}>l3UI</Link>
         {/* <ul className={styles.navmenu}>
           <li className={styles.navitem}>Components</li>
           <li className={styles.navitem}>Documentation</li>

@@ -14,6 +14,7 @@ export type ToggleRootProps = {
 
   disabled?: boolean;
   variant?: Variant;
+  className?: string;
 } & HTMLAttributes<HTMLDivElement>;
 
 export type ToggleContextType = {

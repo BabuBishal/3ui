@@ -3,7 +3,7 @@ import React from "react";
 const steps = [
   { n: "1", title: "Explore Components", desc: "Check out our component library and find what you need" },
   { n: "2", title: "Read Documentation", desc: "Each component has detailed documentation and examples" },
-  { n: "3", title: "Build Amazing Apps", desc: "Use 3UI to create beautiful, accessible applications" },
+  { n: "3", title: "Build Amazing Apps", desc: "Use l3UI to create beautiful, accessible applications" },
 ];
 
 const NextSteps = () => (

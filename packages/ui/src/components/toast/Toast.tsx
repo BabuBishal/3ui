@@ -8,6 +8,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { cn } from "@/utils/cn";
 import type { ToastContextValue, ToastItem, ToastOptions } from "./Toast.types";
 
 const ToastContext = createContext<ToastContextValue | null>(null);
@@ -28,6 +29,7 @@ export const ToastProvider = ({ children }: { children: ReactNode }) => {
       description: opts.description ?? "",
       type: opts.type ?? "default",
       duration: typeof opts.duration === "number" ? opts.duration : 4000,
+      className: opts.className ?? "",
     };
 
     setToasts((s) => [toast, ...s]);
@@ -92,7 +94,7 @@ function ToastView({
   toast: ToastItem;
   onClose: () => void;
 }) {
-  const { title, description, type, duration } = toast;
+  const { title, description, type, duration, className } = toast;
 
   const progressRef = useRef<HTMLDivElement | null>(null);
 
@@ -111,7 +113,7 @@ function ToastView({
 
   return (
     <div
-      className={`toast-root toast-variant-${type}`}
+      className={cn(`toast-root toast-variant-${type}`, className)}
       role="status"
       aria-live="polite"
     >

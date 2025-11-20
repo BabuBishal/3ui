@@ -6,6 +6,7 @@ export type ToastOptions = {
   type?: ToastType;
   duration?: number;
   id?: string;
+  className?: string;
 };
 
 export type ToastItem = Required<ToastOptions> & {

@@ -141,45 +141,6 @@
 }
 
 /* Dark mode - Subtle adjustments */
-[data-theme="dark"] .accordion-item {
-  background: var(--ui-surface, #1e293b);
-  border-color: var(--ui-border, #334155);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-[data-theme="dark"] .accordion-item:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  border-color: var(--ui-border, #475569);
-}
-
-[data-theme="dark"] .accordion-trigger:hover {
-  background: rgba(255, 255, 255, 0.03);
-}
-
-[data-theme="dark"] .accordion-trigger-open {
-  background: rgba(255, 255, 255, 0.03);
-}
-
-[data-theme="dark"] .accordion-icon {
-  background: var(--ui-background, #0f172a);
-  border-color: var(--ui-border, #334155);
-}
-
-[data-theme="dark"] .accordion-trigger:hover .accordion-icon {
-  border-color: var(--ui-text-primary, #f8fafc);
-  background: var(--ui-surface, #1e293b);
-  color: var(--ui-text-primary, #f8fafc);
-}
-
-[data-theme="dark"] .accordion-trigger:hover .accordion-icon-open {
-  transform: rotate(180deg) scale(1.05);
-}
-
-[data-theme="dark"] .accordion-icon-open {
-  background: var(--ui-text-primary, #f8fafc);
-  border-color: var(--ui-text-primary, #f8fafc);
-  color: var(--ui-background, #0f172a);
-}
 
 /* Responsive design */
 @media (max-width: 768px) {

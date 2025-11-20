@@ -1,15 +1,21 @@
 {
-  "name": "3ui-monorepo",
+  "name": "l3ui-monorepo",
   "private": true,
   "workspaces": [
     "packages/*",
-    "apps/*"
+    "app/*"
   ],
   "scripts": {
     "build": "pnpm -r build",
     "dev": "pnpm -C app/docs dev",
     "lint": "pnpm -r lint",
     "format": "pnpm -r format"
+  },
+  "pnpm": {
+    "overrides": {
+      "react": "^19.0.0",
+      "react-dom": "^19.0.0"
+    }
   },
   "devDependencies": {
     "@types/node": "^24.10.1",

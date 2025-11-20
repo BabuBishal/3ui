@@ -40,29 +40,29 @@
     "react-components",
     "ui-library",
     "hooks",
-    "3ui"
+    "l3ui"
   ],
   "author": "Bishal Babu Bohara <boharabishalbabu@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/BabuBishal/3ui.git",
+    "url": "https://github.com/BabuBishal/l3ui.git",
     "directory": "ComponentLibrary/packages/ui"
   },
   "bugs": {
-    "url": "https://github.com/BabuBishal/3ui/issues"
+    "url": "https://github.com/BabuBishal/l3ui/issues"
   },
-  "homepage": "https://github.com/BabuBishal/3ui#readme",
+  "homepage": "https://github.com/BabuBishal/l3ui#readme",
   "peerDependencies": {
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^5.0.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "typescript": "^5.3.2",
     "vite": "^5.0.0",
     "vite-plugin-css-injected-by-js": "^3.5.2",

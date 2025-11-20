@@ -1,14 +1,13 @@
-import {
-  createContext,
-  useContext,
-  useState,
-  type ReactNode,
-  useCallback,
-  useId,
-} from "react";
+import { createContext, useContext, useState, useCallback, useId } from "react";
 import { cn } from "@/utils/cn";
 import "./accordion.css";
-import { AccordionContextType } from "./accordion.types";
+import {
+  AccordionContextType,
+  AccordionProps,
+  AccordionItemProps,
+  AccordionTriggerProps,
+  AccordionContentProps,
+} from "./accordion.types";
 
 const AccordionContext = createContext<AccordionContextType | undefined>(
   undefined
@@ -18,11 +17,7 @@ export const Accordion = ({
   children,
   defaultOpenItems = [],
   className,
-}: {
-  children: ReactNode;
-  defaultOpenItems?: string[];
-  className?: string;
-}) => {
+}: AccordionProps) => {
   const [openItems, setOpenItems] = useState<string[]>(defaultOpenItems);
 
   const toggleItem = useCallback((value: string) => {
@@ -45,15 +40,7 @@ const ItemContext = createContext<{ value: string; id: string } | undefined>(
   undefined
 );
 
-const Item = ({
-  value,
-  children,
-  className,
-}: {
-  value: string;
-  children: ReactNode;
-  className?: string;
-}) => {
+const Item = ({ value, children, className }: AccordionItemProps) => {
   const id = useId();
   return (
     <ItemContext.Provider value={{ value, id }}>
@@ -65,13 +52,7 @@ const Item = ({
 // ───────────────────────────────────────────────
 // Trigger
 // ───────────────────────────────────────────────
-const Trigger = ({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) => {
+const Trigger = ({ children, className }: AccordionTriggerProps) => {
   const item = useContext(ItemContext);
   const accordion = useContext(AccordionContext);
 
@@ -113,13 +94,7 @@ const Trigger = ({
 // ───────────────────────────────────────────────
 // Content
 // ───────────────────────────────────────────────
-const Content = ({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) => {
+const Content = ({ children, className }: AccordionContentProps) => {
   const item = useContext(ItemContext);
   const accordion = useContext(AccordionContext);
 
