@@ -28,8 +28,8 @@ export { Card } from "./components/card";
 export type { CardProps } from "./components/card";
 
 // Badge
-export { Badge } from "./components/badges";
-export type { BadgeProps, BadgeVariant, BadgeSize } from "./components/badges";
+export { Badge } from "./components/badge";
+export type { BadgeProps, BadgeVariant, BadgeSize } from "./components/badge";
 
 // Modal (now named export only)
 export { Modal } from "./components/modal";
@@ -102,19 +102,19 @@ export { cn } from "./utils/cn";
 
 // ===== styles for backup =====
 
-import './components/accordion/accordion.css';
-import './components/badges/badges.css';
-import './components/button/button.css';
-import './components/card/card.css';
-import './components/checkbox/checkbox.css';
-import './components/input/input.css';
-import './components/loadingDots/loadingdots.css';
-import './components/modal/modal.css';
-import './components/select/select.css';
-import './components/slider/slider.css';
-import './components/spinner/spinner.css';
-import './components/table/table.css';
-import './components/tabs/tabs.css';
-import './components/textarea/textarea.css';
-import './components/toast/toast.css';
-import './components/toggle/toggle.css';
+import "./components/accordion/accordion.css";
+import "./components/badge/badge.css";
+import "./components/button/button.css";
+import "./components/card/card.css";
+import "./components/checkbox/checkbox.css";
+import "./components/input/input.css";
+import "./components/loadingDots/loadingdots.css";
+import "./components/modal/modal.css";
+import "./components/select/select.css";
+import "./components/slider/slider.css";
+import "./components/spinner/spinner.css";
+import "./components/table/table.css";
+import "./components/tabs/tabs.css";
+import "./components/textarea/textarea.css";
+import "./components/toast/toast.css";
+import "./components/toggle/toggle.css";

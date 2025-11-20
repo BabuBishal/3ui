@@ -107,12 +107,11 @@ const BadgePage = () => {
           code={BadgeVariantCode}
           centered
         >
-          <Badge variant="success" >Success</Badge>
-          <Badge variant="primary" >Primary</Badge>
-          <Badge variant="secondary" >Secondary</Badge>
-          <Badge variant="warning" >Warning</Badge>
-          <Badge variant="danger" >Error</Badge>
-          <Badge variant="info">Info</Badge>
+          <Badge variant="success">Success</Badge>
+          <Badge variant="primary">Primary</Badge>
+          <Badge variant="secondary">Secondary</Badge>
+          <Badge variant="warning">Warning</Badge>
+          <Badge variant="danger">Error</Badge>
         </Showcase>
       </ComponentPage.Section>
 
@@ -127,9 +126,15 @@ const BadgePage = () => {
           code={BadgeSizeCode}
           centered
         >
-          <Badge variant="primary" size="sm">Small</Badge>
-          <Badge variant="primary" size="md">Medium</Badge>
-          <Badge variant="primary" size="lg">Large</Badge>
+          <Badge variant="primary" size="sm">
+            Small
+          </Badge>
+          <Badge variant="primary" size="md">
+            Medium
+          </Badge>
+          <Badge variant="primary" size="lg">
+            Large
+          </Badge>
         </Showcase>
       </ComponentPage.Section>
 
@@ -144,28 +149,31 @@ const BadgePage = () => {
           code={BadgeRoundedCode}
           centered
         >
-          <Badge variant="primary" rounded>Pill Badge</Badge>
-          <Badge variant="success" rounded>Success</Badge>
+          <Badge variant="primary" rounded>
+            Pill Badge
+          </Badge>
+          <Badge variant="success" rounded>
+            Success
+          </Badge>
         </Showcase>
       </ComponentPage.Section>
 
       {/* Unstyled */}
       <ComponentPage.Section
-  title="Unstyled"
-  description="Remove default styles and fully customize the badge appearance"
->
-  <Showcase
-    title="Custom Styled Badge"
-    description="Using unstyled badge + your own CSS"
-    code={BadgeUnstyledCode}
-    centered
-  >
-    <Badge unstyled className="custom-badge">
-      Custom Styled
-    </Badge>
-  </Showcase>
-</ComponentPage.Section>
-
+        title="Unstyled"
+        description="Remove default styles and fully customize the badge appearance"
+      >
+        <Showcase
+          title="Custom Styled Badge"
+          description="Using unstyled badge + your own CSS"
+          code={BadgeUnstyledCode}
+          centered
+        >
+          <Badge unstyled className="custom-badge">
+            Custom Styled
+          </Badge>
+        </Showcase>
+      </ComponentPage.Section>
 
       {/* API Reference */}
       <ComponentPage.Section
