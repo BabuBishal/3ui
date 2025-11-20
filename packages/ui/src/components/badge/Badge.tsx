@@ -1,5 +1,5 @@
 import { cn } from "../../utils/cn";
-import "./badges.css";
+import "./badge.css";
 import { BadgeProps } from "./badge.types";
 
 export function Badge({
