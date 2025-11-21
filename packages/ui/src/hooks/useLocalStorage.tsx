@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 
 export function useLocalStorage<T>(key: string, initialValue: T) {
   const keyRef = useRef<string>(key);
+  const isRemovingRef = useRef<boolean>(false);
 
   const [storedValue, setStoredValue] = useState<T>(() => {
     if (typeof window === "undefined") return initialValue;
@@ -45,6 +46,7 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
   const remove = useCallback(() => {
     try {
       if (typeof window !== "undefined") {
+        isRemovingRef.current = true;
         window.localStorage.removeItem(keyRef.current);
       }
       setStoredValue(initialValue);
@@ -54,11 +56,17 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
   }, [initialValue]);
 
   useEffect(() => {
+    // Skip saving if we just removed the item
+    if (isRemovingRef.current) {
+      isRemovingRef.current = false;
+      return;
+    }
+
     try {
       if (typeof window !== "undefined") {
         window.localStorage.setItem(
           keyRef.current,
-          JSON.stringify(storedValue) 
+          JSON.stringify(storedValue)
         );
       }
     } catch (error) {
